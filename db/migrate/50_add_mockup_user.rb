@@ -1,6 +1,8 @@
 class AddMockupUser < ActiveRecord::Migration
-	User.new(:email => "adrian.stratulat@cti.pub.ro",
-		     :password => "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3").save()
-	User.new(:email => "still_me@internetz",
-			 :password => "p").save()
+	User.new(:email => "adrian",
+		    	 :password => "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb").save()
+	User.new(:email => "user",
+			 		 :password => "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb").save()
+ # parola este "a"
+
 end

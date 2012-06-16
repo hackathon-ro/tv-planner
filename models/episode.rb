@@ -8,6 +8,10 @@ class Episode < ActiveRecord::Base
       u = User.where(:id => s[:user_id]).first
       u.enqueue_message(self.id)
     end
-
   end
+
+  def airdate_pretty
+    self.airdate.strftime("%c")
+  end
+
 end

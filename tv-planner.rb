@@ -53,7 +53,7 @@ class Tv_planner < Sinatra::Base
     end
   end
 
-  get "/remove-subscribtion" do
+  get "/remove-subscription" do
     if session[:token].nil?
       erb :login
     else
@@ -119,6 +119,7 @@ class Tv_planner < Sinatra::Base
     else
       @user = User.where(:email => session[:token]).first;
       @all_series = Serie.all()
+      @my_series = @user.get_subscribed_series()
       erb :all_series
     end
   end
