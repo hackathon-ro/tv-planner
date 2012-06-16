@@ -3,7 +3,7 @@ class CreateTableSerie < ActiveRecord::Migration
     create_table :series do |t|
       t.integer :show_id
       t.string  :name
-      t.string  :clasifiscat
+      t.string  :status
       t.string  :url
     end
   end

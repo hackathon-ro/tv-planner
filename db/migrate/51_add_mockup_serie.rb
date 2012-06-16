@@ -1,21 +1,22 @@
+require 'nokogiri'
+require 'open-uri'
+
 class AddMockupSerie < ActiveRecord::Migration
-	Serie.new(:name => "Doctor Who",
-				:show_id => 3332,
-				:clasifiscat => "awesome",
-				:url => "blahblah").save()
 
-	Serie.new(:name => "Fringe",
-				:show_id => 18388,
-				:clasifiscat => "awesome",
-				:url => "...").save()
+	series_ids = [3332,  # Doctor Who
+					      18388, # Fringe
+                21704, # Glee
+                15319  # Californication
+               ]
 
-	Serie.new(:name => "Glee",
-				:show_id => 21704,
-				:clasifiscat => "not awesome",
-				:url => "...").save()
+  series_ids.each do |id|
 
-	Serie.new(:name => "Californication",
-				:show_id => 15319,
-				:clasifiscat => "awesome",
-				:url => "...").save()	
+    doc = Nokogiri::HTML(open('http://services.tvrage.com/feeds/showinfo.php?sid=' + id.to_s));
+    Serie.new(:name => doc.xpath('//showname').text,
+              :show_id => id,
+              :status => doc.xpath('//status').text,
+              :url => doc.xpath('//showlink').text
+    ).save()
+
+  end
 end
