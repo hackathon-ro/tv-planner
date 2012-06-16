@@ -4,7 +4,7 @@ gem "sinatra", :require => "sinatra/base"
 gem "activerecord"
 gem "sinatra-activerecord"
 gem "sinatra-contrib"
-gem "hpricot"
+gem "nokogiri"
 
 group :production do
   gem 'pg'

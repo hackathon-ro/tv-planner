@@ -11,7 +11,8 @@ class Episode < ActiveRecord::Base
   end
 
   def airdate_pretty
-    self.airdate.strftime("%c")
+    # self.airdate.strftime("%c")
+    self.airdate
   end
 
 end

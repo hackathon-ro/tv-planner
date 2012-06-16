@@ -5,16 +5,20 @@
   <table class="table table-striped">
     <thead>
       <tr>
+        <th>Series name</th>
         <th>Name</th>
-        <th>Episod_no</th>
+        <th>Episode number</th>
+        <th>Season number</th>
         <th>Airdate</th>
       </tr>
     </thead>
     <tbody>
       <% @alerts.each do |item| %>
         <tr>
+          <td> <%= item.serie.name %> </td>
           <td> <%= item.name %> </td>
           <td> <%= item.episode_nr %> </td>
+          <td> <%= item.season_nr %> </td>
           <td> <%= item.airdate_pretty %> </td>
           <td>
             <a href="/mark_seen?id=<%= item.id %>"> <i class="icon-ok"> </i> </a> 
