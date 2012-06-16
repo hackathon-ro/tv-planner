@@ -5,6 +5,7 @@ class CreateTableSerie < ActiveRecord::Migration
       t.string  :name
       t.string  :status
       t.string  :url
+      t.date    :last_update
     end
   end
 

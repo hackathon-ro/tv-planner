@@ -7,9 +7,11 @@ Working:
 * Marian Craciunescu
 
 TODO and add tickets:
-* get XML feed and update our DB (periodically)[1]
 * design work
+* implement correctly special episodes
 * notify users by email
 * a lot more ...
 
-[1]: http://services.tvrage.com/info.php?page=main
+Important stuff:
+
+Run periodically "ruby update_episode_db.rb" to get new episodes

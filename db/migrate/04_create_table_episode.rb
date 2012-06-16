@@ -5,7 +5,7 @@ class CreateTableEpisode < ActiveRecord::Migration
       t.string     :name
       t.integer	   :episode_nr
       t.integer    :season_nr
-      t.string     :airdate
+      t.date       :airdate
     end
   end
 

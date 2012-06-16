@@ -15,8 +15,11 @@ class AddMockupSerie < ActiveRecord::Migration
     Serie.new(:name => doc.xpath('//showname').text,
               :show_id => id,
               :status => doc.xpath('//status').text,
-              :url => doc.xpath('//showlink').text
+              :url => doc.xpath('//showlink').text,
+              :last_update => DateTime.now
     ).save()
+
+
 
   end
 end

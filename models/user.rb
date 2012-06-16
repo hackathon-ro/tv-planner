@@ -18,7 +18,6 @@ class User < ActiveRecord::Base
 
   def get_current_alerts
     messages = dequeue_messages();
-    puts messages.inspect
 
     ret = Array.new;
 

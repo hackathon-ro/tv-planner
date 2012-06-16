@@ -71,7 +71,6 @@ class Tv_planner < Sinatra::Base
     else
       @user = User.where(:email => session[:token]).first;
       @my_series = @user.get_subscribed_series()
-      puts @my_series.inspect
       erb :index
     end
   end
